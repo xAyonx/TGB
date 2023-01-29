@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html style="background-color:rgb(184, 233, 240);">
+    <head>
+        <title>TGB</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/css/uikit.min.css" />
+        
+        <style>
+            .gl-center {
+                text-align: center;
+            }
+            .gl-container-center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body style="background-color:rgb(199, 241, 247);">
+        <header>
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left uk-container">
+                    <ul class="uk-navbar-nav">
+                        <li uk-toggle="target: #gl-create-diarys-modal" class="uk-active"><a href="#">Enter something</a></li>
+                    </ul>
+            
+                </div>
+            </nav>
+        </header>
+        <div class="uk-container">
+            <h1 class="gl-center">My Diary</h1>
+            <div class="uk-container" id="gl-card-container"></div>
+        </div>
+        <div uk-modal id="gl-create-diarys-modal">
+            <div class="uk-modal-dialog uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-modal-header">
+                    <h2 class="uk-modal-title">Create New Entry</h2>
+                </div>
+                <div class="uk-modal-body">
+                    <div class="uk-margin">
+                        <div class="uk-form-label">Headline</div>
+                        <input class="uk-input" id="gl-diarys-name" name="user" placeholder="Your Story needs A Name" />
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-form-label">Entry</div>
+                        <textarea 
+                                class="uk-textarea" 
+                                rows="5" 
+                                placeholder="Enter your fancy pance story here ..." 
+                                id="gl-diarys-text"
+                                name="text"
+                                aria-label="Textarea"></textarea>
+                    </div>
+                </div>
+                <div class="uk-modal-footer">
+                    <div style="display: flex; justify-content: space-between;">
+                        <button type="reset" class="uk-button">Reset</button>
+                        <button class="uk-button uk-button-primary" onclick="saveEntry()">Speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit-icons.min.js"></script>
+    <script src="diaryClient.js"></script>
+</html>
